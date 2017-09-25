@@ -2,7 +2,6 @@
     height:  100vh;
     width:  100vw;
     color: BLACK;   
-    font-size: large ;
     opacity: 0.87;
     flex-flow: column ;
 }
@@ -13,20 +12,15 @@ div{
 
 .header {
     background-color: pink;
-    display: block;
     height: 7vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    
+    justify-content: center;   
+    font-size: larger;
 }
 
 
 .body {
-    margin: 0 0 0 0;   
     height:  86vh;
     width: 100vw;
-
 }
 
 body{
@@ -41,27 +35,23 @@ body{
 }
 
 .center {
-background-color: green;
-height: 86vh;
-width : 960px;
-text-align: center;
-justify-content: center;
-align-content: center;
-
+    background-color: green;
+    height: 86vh;
+    width : 960px;
+    justify-content: center;
 }
 
 
-.button {
-    align-self: center;
-    justify-content: center;
-    background-color: white;
-    border: none;
-    color: black;    
-    font: 16px;
-    align-items: center;    
+.button {    
+    background-color: white;    
+    color: black;      
     border-radius: 150px ;
     height: 150px;
     width: 150px;
+    font-size: medium;
+    align-self: center;
+    justify-content: center;
+    align-items: center; 
 }
 
 .right{   
@@ -71,10 +61,8 @@ align-content: center;
 }
 
 .footer{
-    background-color: grey;
-    display: block;
-    height: 7vh;
-    border: 0;
-    text-align: center;
-
+    background-color: grey;    
+    height: 7vh;   
+    justify-content: center; 
+    font-size: small;
 }
