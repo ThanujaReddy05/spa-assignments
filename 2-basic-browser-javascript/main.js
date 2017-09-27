@@ -5,7 +5,6 @@ let totalCookie = localStorage.getItem('total')
 let aCounterCookie = localStorage.getItem('aCounter')
 let multiCookie = localStorage.getItem('multi')
 const errorMsg = "Bad"
-let  counter = 0
 let aCounter = 0
 
 
@@ -38,8 +37,7 @@ const addTimed = () => {
     checkTotal()
 }
 
-const startAutoClicker = () => {
-   
+const startAutoClicker = () => {   
     aCounter++   
     return aCounter
 }
@@ -71,7 +69,7 @@ const checkTotal = () => {
 $(document).ready(() => { 
 
     if(totalCookie != null){
-                total = totalCookie
+                total = totalCookie //restoring the cookies
                 aCounter = aCounterCookie
                 multi = multiCookie
                 displayTotal(total)
@@ -88,11 +86,7 @@ $(document).ready(() => {
                         (total<10)? alert(errorMsg) : total = total  - 10
                         multi = multi * multi
                          $('#add_button').html('+' + multi)
-                         $('#multi_button').html('*' + multi)
-                        //  $('#auto_button').html('+' + multi)
-                        //  $('#cost').fadeIn(100)
-                        //  $('#cost').html('-10')
-                        //  $('#cost').fadeOut(100)
+                         $('#multi_button').html('*' + multi)                       
                         displayTotal(total)
                     })
 
@@ -106,10 +100,7 @@ $(document).ready(() => {
                             }
                             $('#autoClickerCount').html('AutoClickerCount : '  + aCounter)
                             if(total > 100) {
-                                total = total-100
-                                // $('#cost').fadeIn(100)
-                                // $('#cost').html('-100')
-                                // $('#cost').fadeOut(100)
+                                total = total-100                                
                             }
                         })
 
@@ -120,6 +111,7 @@ $(document).ready(() => {
                         }
                     )
 
+                    //Storing the cokkies
     localStorage.setItem('total',total)
     localStorage.setItem('aCounter', aCounter)
     localStorage.setItem('multi', multi)

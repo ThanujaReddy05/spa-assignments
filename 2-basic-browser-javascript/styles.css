@@ -14,8 +14,7 @@ div{
     background-color: pink;
     height: 7vh;
     justify-content: center;   
-    font-size: larger;
-    
+    font-size: larger;   
 }
 
 
@@ -23,6 +22,7 @@ div{
     height:  86vh;
     width: 100vw;
 }
+
 
 body{
     margin: 0px;
@@ -60,27 +60,12 @@ body{
     align-items: center; 
 } 
 
-label {
-    /* line-height: 15; */
-    /* padding-left: 30%; */
-    color: chartreuse;
-    /* font-size: 20px; */
-    /* background-color: white;  */
-    /* color: black;       
-    /* height: 40px;
-    width: 100px;
-    font-size: small; */
-    /* flex-flow: column wrap;  */
-   /* align-items: flex-end */
-   /* justify-content: center; */
-    /* align-items: center; */  
+label {    
+    color: chartreuse;     
     display: block;
     align-self: center;
     padding: 5px;
-    text-align: center;
-    
-    
-    
+    text-align: center;    
 }
 
 .right{   
@@ -99,24 +84,12 @@ label {
 }
 
  #reset{
-    /* margin-top: 5px; */
+  
     background-color: white;
-    color: black;
-    /* left: 80%; */
-    /* top: 0px; */
-    /* height:4vh; */
-    /* width: 50px; */
-    /* line-height: 45px; */
+    color: black;    
     border-radius: 30%;
-    justify-content: flex-end;
-    /* flex-flow: row; */
+    justify-content: flex-end;    
     align-self: right;
     
  } 
 
-#cost {
-    color: red;
-    font-size: 10px;
-    font-weight: 500;
-    display: none;
-  }
