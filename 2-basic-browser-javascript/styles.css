@@ -14,7 +14,8 @@ div{
     background-color: pink;
     height: 7vh;
     justify-content: center;   
-    font-size: larger;   
+    font-size: larger;  
+    align-items: center; 
 }
 
 

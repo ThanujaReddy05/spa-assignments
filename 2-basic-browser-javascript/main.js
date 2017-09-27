@@ -49,6 +49,8 @@ const clearTotal = () => {
     localStorage.removeItem('multi')
     stopFlag = 1
     total = 0
+    multi = 0
+    $('#add_button').html('+1')
     displayTotal(total)
 }
 
