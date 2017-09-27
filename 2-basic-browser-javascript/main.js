@@ -1,7 +1,9 @@
 let total = 0;
 let multi = 1.2;
 let stopFlag = 0;
-let cookie = localStorage.getItem('total')
+let totalCookie = localStorage.getItem('total')
+let aCounterCookie = localStorage.getItem('aCounter')
+let multiCookie = localStorage.getItem('multi')
 const errorMsg = "Bad"
 let  counter = 0
 let aCounter = 0
@@ -9,7 +11,7 @@ let aCounter = 0
 
 const displayTotal = (a) => {
     checkTotal()
-    return $('#total').html(' ' + a)
+    return $('#total').html('  ' + a)
 }
 
 const add = () => {
@@ -26,7 +28,7 @@ const add = () => {
 const addTimed = () => {
     if(stopFlag === 0){
         displayTotal(add())
-      return setTimeout(addTimed, 50)
+      return setTimeout(addTimed, 1000)
          
 
     }
@@ -37,13 +39,16 @@ const addTimed = () => {
 }
 
 const startAutoClicker = () => {
-    counter = counter + 1
-    return counter
+   
+    aCounter++   
+    return aCounter
 }
 
 
 const clearTotal = () => {
     localStorage.removeItem('total')
+    localStorage.removeItem('aCounter')
+    localStorage.removeItem('multi')
     stopFlag = 1
     total = 0
     displayTotal(total)
@@ -65,8 +70,10 @@ const checkTotal = () => {
 
 $(document).ready(() => { 
 
-    if(cookie != null){
-                total = cookie
+    if(totalCookie != null){
+                total = totalCookie
+                aCounter = aCounterCookie
+                multi = multiCookie
                 displayTotal(total)
             }
 
@@ -78,14 +85,15 @@ $(document).ready(() => {
 
     $("#multi_button").click(
                     (event) => {
-                        (total<10)? alert(errorMsg) : total = (total * multi) - 10
-                        multi = multi +0.2
-                         $('add_button').html('+' + multi)
-                         $('multi_button').html('+' + multi)
-                         $('#auto_button').html('+' + multi)
-                         $('#cost').fadeIn(100)
-                         $('#cost').html('-10')
-                         $('#cost').fadeOut(100)
+                        (total<10)? alert(errorMsg) : total = total  - 10
+                        multi = multi * multi
+                         $('#add_button').html('+' + multi)
+                         $('#multi_button').html('*' + multi)
+                        //  $('#auto_button').html('+' + multi)
+                        //  $('#cost').fadeIn(100)
+                        //  $('#cost').html('-10')
+                        //  $('#cost').fadeOut(100)
+                        displayTotal(total)
                     })
 
     $("#auto_button").click(
@@ -94,14 +102,14 @@ $(document).ready(() => {
                                 alert(errorMsg) 
                            } else {
                                 addTimed()
-                               aCount= startAutoClicker()
+                                startAutoClicker()
                             }
-                            $('autoClickerCount').html('+' + aCount)
+                            $('#autoClickerCount').html('AutoClickerCount : '  + aCounter)
                             if(total > 100) {
                                 total = total-100
-                                $('#cost').fadeIn(100)
-                                $('#cost').html('-100')
-                                $('#cost').fadeOut(100)
+                                // $('#cost').fadeIn(100)
+                                // $('#cost').html('-100')
+                                // $('#cost').fadeOut(100)
                             }
                         })
 
@@ -113,6 +121,8 @@ $(document).ready(() => {
                     )
 
     localStorage.setItem('total',total)
+    localStorage.setItem('aCounter', aCounter)
+    localStorage.setItem('multi', multi)
     displayTotal(total)
 })  
 

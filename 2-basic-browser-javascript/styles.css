@@ -33,6 +33,8 @@ body{
     background-color: red;
     height:  100%;    
     flex-grow: 1;
+    justify-content: center;
+    flex-direction: column-reverse;
     
    
 }
@@ -85,6 +87,8 @@ label {
     background-color: blue;
     height:  100%;    
     flex-grow: 1;
+    justify-content: center;
+    flex-direction: column-reverse;
 }
 
 .footer{
